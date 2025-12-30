@@ -1,0 +1,86 @@
+# Move into your Flask project directory
+cd E:\Flask Docker Demo
+
+
+# Build a Docker image named "flask-demo-app" from Dockerfile in current directory
+docker build -t flask-demo-app .
+
+
+# List all local Docker images
+docker images
+
+
+# Run container and map container port 5000 to local port 5000
+docker run -p 5000:5000 flask-demo-app
+
+
+# Stop the running container (press CTRL + C in terminal)
+
+
+# Login to Docker Hub using browser-based authentication
+docker login
+
+
+# Press ENTER → browser opens → enter code → approve login
+
+
+
+# Do this in browser:
+# https://hub.docker.com → Create Repository
+# Repository name: flask-demo-app
+# Visibility: Public
+
+
+
+# Tag local image with Docker Hub username and repository
+docker tag flask-demo-app sayandeep27/flask-demo-app:learning_purpose
+
+
+
+# Confirm tagged image exists
+docker images
+
+
+
+# Push image to Docker Hub repository
+docker push sayandeep27/flask-demo-app:learning_purpose
+
+
+
+# Open in browser to confirm image exists
+# https://hub.docker.com/r/sayandeep27/flask-demo-app
+
+
+
+
+# Remove local images to prove pull works
+docker rmi flask-demo-app
+docker rmi sayandeep27/flask-demo-app:learning_purpose
+
+
+
+# Pull image from Docker Hub
+docker pull sayandeep27/flask-demo-app:learning_purpose
+
+
+
+# Run container from pulled image
+docker run -p 5000:5000 sayandeep27/flask-demo-app:learning_purpose
+
+
+
+# Open browser:
+http://localhost:5000
+
+
+
+
+# Final checklist - 
+✔ Image built
+✔ Image tested locally
+✔ Logged into Docker Hub
+✔ Repo created on Docker Hub
+✔ Image tagged correctly
+✔ Image pushed
+✔ Image pulled
+✔ Container running
