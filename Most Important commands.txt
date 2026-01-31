@@ -16,14 +16,20 @@
 # -------------------------------
 # Build a Docker image from the Dockerfile in the current directory
 # -t assigns a name (and optional tag) to the image
+# here "myapp" is the image name that you are going to make and "lastest" is the tag (If you don’t specify a tag, Docker automatically assigns it as 'latest')
+# here '.' means Current directory, When you run - (docker build .)  -  docker Looks for a Dockerfile in the current directory and Sends all files in this directory to the Docker daemon
 docker build -t myapp:latest .
 
 
 # -------------------------------
 # STEP 3: docker push
 # -------------------------------
+# Before pushing, you must have a docker account and must be logged in using -
+docker login
+
 # Push the built image to a Docker registry (Docker Hub, ECR, etc.)
 # Image must be tagged with registry/repo name before pushing
+# here "username" is the the owner of the Docker repository (like docker push sayandeep27/myapp:latest)
 docker push username/myapp:latest
 
 
@@ -54,9 +60,11 @@ docker ps -a
 # STEP 7: docker run
 # -------------------------------
 # Create and start a container from an image
-# -d  : run in detached mode
+# -d  : run in detached mode means Runs the container in the background + Your terminal is not blocked + Container keeps running even after you close the terminal
+#  Without -d, Docker runs in foreground and shows logs directly.
 # -p  : map host port to container port
-# --name : assign a container name
+# --name : assign a container name, here "myapp_container" is the container name, "myapp" is the image from where the container is created, "latest" is the tag of the image
+# without container name, Docker creates container names something like: "sleepy_hawking", "angry_morse"
 docker run -d -p 8000:8000 --name myapp_container myapp:latest
 
 
