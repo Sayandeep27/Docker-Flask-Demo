@@ -1,7 +1,7 @@
 
 1. Why Docker is needed?
 
-Docker helps developers build, package, and deploy applications quickly and efficiently. It solves the problem of "it works on my machine" by creating a consistent environment across development, testing, and production. Docker containers encapsulate everything an app needs—like code, libraries, and dependencies—ensuring it runs reliably on any system.
+Docker, is an open-source platform, that helps developers build, package, and deploy applications quickly and efficiently. It solves the problem of "it works on my machine" by creating a consistent environment across development, testing, and production. Docker containers encapsulate everything an app needs—like code, libraries, and dependencies—ensuring it runs reliably on any system.
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
