@@ -1,0 +1,53 @@
+docker --version                     # Show Docker version installed
+docker version                       # Detailed client & server version info
+docker info                          # System-wide information
+
+docker images                        # List downloaded images
+docker pull <image>                  # Download image from Docker Hub
+docker build -t <name>:<tag> .       # Build image from Dockerfile
+docker rmi <image>                   # Remove an image
+docker tag <image> <repo>/<name>:<tag>   # Tag image for registry
+docker push <repo>/<name>:<tag>      # Push image to registry
+
+docker ps                            # List running containers
+docker ps -a                         # List all containers (including stopped)
+docker run <image>                   # Run container from image
+docker run -it <image> bash          # Run interactively with bash
+docker start <container>             # Start a stopped container
+docker stop <container>              # Stop a running container
+docker restart <container>           # Restart a container
+docker rm <container>                # Remove a container
+docker exec -it <container> <cmd>    # Run command inside running container
+docker logs <container>              # View container logs
+docker inspect <container>           # Inspect details of container
+
+docker network ls                    # List networks
+docker network create <name>         # Create a new network
+docker network rm <name>             # Remove a network
+docker network inspect <name>        # Inspect network details
+docker network connect <net> <ctr>   # Connect container to a network
+docker network disconnect <net> <ctr> # Disconnect container from a network
+
+docker volume ls                     # List volumes
+docker volume create <name>          # Create volume
+docker volume rm <name>              # Remove volume
+docker volume inspect <name>         # Inspect volume details
+
+docker-compose up                    # Start services (foreground)
+docker-compose up -d                 # Start services (detached mode)
+docker-compose down                  # Stop and remove services
+docker-compose ps                    # List containers in project
+docker-compose logs                  # View service logs
+docker-compose build                 # Build images in compose
+
+docker system df                     # Show Docker disk usage
+docker system prune                  # Remove unused data
+docker image prune                   # Remove unused images
+docker container prune               # Remove stopped containers
+docker volume prune                   # Remove unused volumes
+
+docker save -o <file>.tar <image>    # Save image as tar file
+docker load -i <file>.tar            # Load image from tar file
+docker export <container> > file.tar # Export container filesystem
+docker import <file>.tar <image>     # Import image from tar file
+docker cp <ctr>:<path> <local-path>  # Copy files from container to host
