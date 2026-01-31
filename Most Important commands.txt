@@ -1,0 +1,98 @@
+# -------------------------------
+# STEP 1: Dockerfile
+# -------------------------------
+# A Dockerfile contains instructions to build a Docker image
+# Example:
+# FROM python:3.10-slim
+# WORKDIR /app
+# COPY requirements.txt .
+# RUN pip install -r requirements.txt
+# COPY . .
+# CMD ["python", "app.py"]
+
+
+# -------------------------------
+# STEP 2: docker build
+# -------------------------------
+# Build a Docker image from the Dockerfile in the current directory
+# -t assigns a name (and optional tag) to the image
+docker build -t myapp:latest .
+
+
+# -------------------------------
+# STEP 3: docker push
+# -------------------------------
+# Push the built image to a Docker registry (Docker Hub, ECR, etc.)
+# Image must be tagged with registry/repo name before pushing
+docker push username/myapp:latest
+
+
+# -------------------------------
+# STEP 4: docker images
+# -------------------------------
+# List all Docker images available locally
+docker images
+
+
+# -------------------------------
+# STEP 5: docker pull
+# -------------------------------
+# Pull an image from a Docker registry to local machine
+docker pull username/myapp:latest
+
+
+# -------------------------------
+# STEP 6: docker ps -a
+# -------------------------------
+# List all containers
+# - running containers
+# - stopped containers
+docker ps -a
+
+
+# -------------------------------
+# STEP 7: docker run
+# -------------------------------
+# Create and start a container from an image
+# -d  : run in detached mode
+# -p  : map host port to container port
+# --name : assign a container name
+docker run -d -p 8000:8000 --name myapp_container myapp:latest
+
+
+# -------------------------------
+# STEP 8: docker stop
+# -------------------------------
+# Stop a running container gracefully
+docker stop myapp_container
+
+
+# -------------------------------
+# STEP 9: docker start / docker restart
+# -------------------------------
+# Start a stopped container
+docker start myapp_container
+
+# OR restart a container (stop + start)
+docker restart myapp_container
+
+
+# -------------------------------
+# STEP 10: docker stop (again)
+# -------------------------------
+# Stop the container before removing it
+docker stop myapp_container
+
+
+# -------------------------------
+# STEP 11: docker rm
+# -------------------------------
+# Remove a stopped container
+docker rm myapp_container
+
+
+# -------------------------------
+# STEP 12: docker rmi
+# -------------------------------
+# Remove a Docker image from local system
+docker rmi myapp:latest
