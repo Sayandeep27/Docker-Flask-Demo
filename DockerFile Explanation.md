@@ -16,7 +16,10 @@ This README explains the following Dockerfile in complete detail, including:
 
 ## 🐳 The Dockerfile
 
+Shortcut Trcik - "Funny Workers Cook Rice, Cook Everything Carefully"
+
 ```dockerfile
+
 FROM python:3.11-slim
 
 WORKDIR /app
