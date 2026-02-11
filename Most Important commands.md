@@ -72,12 +72,12 @@ Push the built image to a Docker registry (Docker Hub, ECR, etc.).
 
 Image must be tagged with registry/repo name before pushing.
 
-Here `username` is the owner of the Docker repository.
+Here `username` is the owner of the Docker repository = `Sayandeep27`
 
 Example:
 
 ```bash
-docker push username/myapp:latest
+docker push Sayandeep27/myapp:latest
 ```
 
 ---
@@ -97,7 +97,7 @@ docker images
 Pull an image from a Docker registry to local machine.
 
 ```bash
-docker pull username/myapp:latest
+docker pull Sayandeep27/myapp:latest
 ```
 
 ---
